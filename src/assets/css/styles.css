@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Theme definition*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --bg-1: #d8dee9;
+  --bg-2: #e5e9f0;
+  --bg-3: #eceff4;
+  --bg-4: #ffffff;
+  --fg-1: #2e3440;
+  --fg-2: #3b4252;
+  --fg-3: #434c5e;
+  --fg-4: #4c566a;
+  --category: #8fbcbb;
+  --link: #81a1c1;
+  --blue: #5e81ac;
+  --secondary-blue: #88c0d0;
+  --red: #bf616a;
+  --orange: #d08770;
+  --yellow: #ebcb8b;
+  --green: #a3be8c;
+  --purple: #b48ead;
+}
+[data-theme="dark"] {
+  --bg-1: #2e3440;
+  --bg-2: #3b4252;
+  --bg-3: #434c5e;
+  --bg-4: #4c566a;
+  --fg-1: #d8dee9;
+  --fg-2: #e5e9f0;
+  --fg-3: #eceff4;
+  --fg-4: #ffffff;
+  --blue: #88c0d0;
+  --secondary-blue: #5e81ac;
+}
+
+* {
+  /* For debugging css :v*/
+  /* outline: 1px solid red; */
+}
+
+/*component style definition*/
+@layer components {
+  .green-btn {
+    color: var(--fg-1);
+    background-color: var(--green);
+    transition: color 0.5s;
+    @apply hover:scale-105 px-3 py-1 text-center rounded-lg;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+  background-color: var(--bg-1);
+  color: var(--fg-1);
+  transition: all 0.5s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: var(--fg-1);
+}
+
+a:hover {
+  color: var(--link);
+  transition: 0.2s;
+}
+
+/* For code block */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* yang webkit ini dak biso nuruti data-theme jadi yang light tulah ck ini tulah */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--fg-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-1);
+  border-radius: 100vw;
+  border: 4px solid var(--fg-1);
+}
+::-webkit-scrollbar-thumb:hover {
+  border: 3px solid var(--fg-1);
+  transition: border 0.2s;
+}
+
+/*kalo misal inputan from hasil autocomplete browser, dionyo ngasih background putih defaultnyo, kita tak mau.. jadi ganti*/
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 1rem 1rem var(--bg-3) inset !important;
+  caret-color: var(--fg-1);
+  @apply rounded-none;
+  transition: box-shadow 0.5s;
+}
+
+/*nah text colornyo jugo digantinyo bruhh, default warno digantinyo item, kita tidak mau itu*/
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--fg-3) !important;
+}
