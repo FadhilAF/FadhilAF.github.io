@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.svg",
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '128': '32rem',
+      },
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "MIHU (May I Help You)",
+    "description":
+      "Application for providing or giving people that need low skilled hard labor help. Its focused on the NLP model that categorizes \"child sentences\" into identifiable gig category. I helped build the back end, machine learning model, also i learned to deploy using GCP cloud functions. Lastly, I also did manage the project easily with my appreciative and hardworking team.",
+    "link": "https://www.linkedin.com/posts/fadhilaf_mihu-bangkit-elevator-pitch-activity-7142413660936650752-UDpz?utm_source=share&utm_medium=member_desktop"
+  },
+  {
+    "title": "Studgage",
+    "description":
+      "Working on the Back End system of the social media for student concept, Real-time chat feature using websocket, Authentication system integrated with the real-time chat redis session if online (this was made before redis become closed source -_-)",
+    "link": "https://github.com/fadhilaf/studgage-backend"
+  },
+  {
+    "title": "Protein (English proficiency test prep)",
+    "description":
+      "Working on a full-stack english test prep web application. Admin page to dynamically add the exam test questions (text, image, audio). English Exam page with dynamic components with timer feature, answer save, and score calculation logic. Basic User authentication",
+    "link": "https://github.com/aziemp66/protein-intel"
+  }
+]

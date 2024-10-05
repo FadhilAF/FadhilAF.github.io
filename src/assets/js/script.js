@@ -9,7 +9,7 @@ if (theme === null && window.matchMedia("(prefers-color-scheme: dark)").matches)
     localStorage.setItem("theme", "dark");
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   updateToggle();
 });
 
@@ -17,12 +17,12 @@ function updateToggle() {
   const currentTheme = localStorage.getItem("theme");
 
   document.body.setAttribute("data-theme", currentTheme);
-  document.getElementById("theme-toggle").checked = currentTheme === "light";
+  document.getElementById("theme-toggle").checked = currentTheme === "dark";
 }
 
 function toggleTheme() {
-  const isDark = localStorage.getItem("theme") === "dark";
+  const isLight = localStorage.getItem("theme") === "light";
 
-  localStorage.setItem("theme", isDark ? "light" : "dark");
+  localStorage.setItem("theme", isLight ? "dark" : "light");
   updateToggle();
 }

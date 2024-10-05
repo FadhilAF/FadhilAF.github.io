@@ -1,0 +1,88 @@
+---
+title: portfolio
+layout: base 
+tags: page
+--- 
+
+<div>
+  <div class="title-container w-11/12 sm:w-128">
+    <p class="text-center text-2xl font-bold">Portfolio</p>
+    Showing some of the projects that I've worked on and could share.
+  </div>
+  <div class="topics">
+    {%- for project in portfolio -%}
+      {%- if loop.index % 2 == 0 -%}
+        <div class="topic-container-even">
+          <svg
+            class="separator-even"
+            viewBox="0 0 900 100"
+            version="1.1"
+          >
+            <path d="M0 77L75 25L150 48L225 32L300 70L375 70L450 27L525 58L600 52L675 76L750 56L825 59L900 56L900 101L825 101L750 101L675 101L600 101L525 101L450 101L375 101L300 101L225 101L150 101L75 101L0 101Z"></path>
+          </svg>
+          <div class="p-8 topic-even">
+      {%- else -%}
+        <div class="topic-container-odd">
+          <svg
+            class="separator-odd"
+            viewBox="0 0 900 100"
+            version="1.1"
+          >
+            <path d="M0 48L75 72L150 38L225 38L300 51L375 47L450 22L525 71L600 49L675 66L750 68L825 20L900 59L900 101L825 101L750 101L675 101L600 101L525 101L450 101L375 101L300 101L225 101L150 101L75 101L0 101Z"></path>
+          </svg>
+          <div class="p-8 topic-odd">
+      {%- endif -%}
+            <a target="_blank" href="{{ project.link }}">
+              <h3 class="max-w-lg m-auto text-center text-xl font-bold">{{ project.title }}</h3>
+              <p class="max-w-3xl m-auto">{{ project.description }}</p>
+            </a>
+          </div>
+        </div>
+    {%- endfor -%}
+
+    {% set projectLength = portfolio | length %}
+    {% if projectLength % 2 == 1 %}
+      <div class="topic-container-even">
+        <svg
+          class="separator-even"
+          viewBox="0 0 900 100"
+          version="1.1"
+        >
+          <path d="M0 77L75 25L150 48L225 32L300 70L375 70L450 27L525 58L600 52L675 76L750 56L825 59L900 56L900 101L825 101L750 101L675 101L600 101L525 101L450 101L375 101L300 101L225 101L150 101L75 101L0 101Z"></path>
+        </svg>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .title-container {
+    margin: auto;
+    text-shadow: -1px -1px 0 var(--bg-1), 1px -1px 0 var(--bg-1),
+      -1px 1px 0 var(--bg-1), 1px 1px 0 var(--bg-1);
+  }
+
+  .topic-container-odd {
+    background-color: var(--bg-1);
+  }
+
+  .topic-container-even {
+    background-color: var(--bg-2);
+  }
+
+  .topic-odd {
+    background-color: var(--bg-2);
+  }
+
+  .topic-even {
+    background-color: var(--bg-1);
+  }
+
+  .separator-odd {
+    fill: var(--bg-2);
+  }
+
+  .separator-even {
+    fill: var(--bg-1);
+  }
+</style>
