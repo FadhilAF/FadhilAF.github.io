@@ -1,0 +1,62 @@
+<div class="header">
+  <div class="h-16 max-w-7xl m-auto px-2 justify-center flex relative">
+    <div class="h-full w-10/12 content-center">
+      <div class="max-w-6">
+        <a href="/">
+          <img src="/assets/svg/logo.svg" alt="website logo" />
+        </a>
+      </div>
+    </div>
+    <div class="space-x-4 items-center flex">
+      <div class="text-lg flex sm:hidden">
+        <button class="BURGER-ICON h-8 w-8 items-center overflow-hidden flex relative">
+          <span class="LINE h-1 w-8 rounded-sm absolute"></span>
+        </button>
+      </div>
+      <div class="space-x-4 text-lg hidden sm:flex">
+        {%- for page in collections.page -%}
+          <a href="{{ page.url }}">{{ page.data.title | capitalize }}</a>
+        {%- endfor -%}
+      </div>
+      {% include "components/toggleSwitch.njk" %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .header {
+    background-color: var(--bg-1);
+    position: sticky; /* relative, tapi nempel */
+    top: 0; /* harus kasih tahu dimano lokasi dio pas sticky agek */
+    left: 0;
+    z-index: 1;
+  }
+
+  .BURGER-ICON span {
+    background-color: var(--fg-3);
+  }
+
+  .BURGER-ICON:hover span,
+  .BURGER-ICON:hover span::before,
+  .BURGER-ICON:hover span::after {
+    background-color: var(--link);
+    transition: all 0.2s;
+  }
+
+  .BURGER-ICON span::before,
+  .BURGER-ICON span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.25rem;
+    border-radius: 0.125rem;
+    width: 2rem;
+    background-color: var(--fg-3);
+  }
+  .BURGER-ICON span::before {
+    transform: translateY(-0.625rem);
+  }
+  .BURGER-ICON span::after {
+    transform: translateY(0.625em);
+  }
+</style>

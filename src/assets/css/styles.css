@@ -47,9 +47,12 @@
   .green-btn {
     color: var(--fg-1);
     background-color: var(--green);
-    transition: color 0.5s;
     @apply hover:scale-105 px-3 py-1 text-center rounded-lg;
   }
+}
+
+* {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, fill 0.2s ease-in-out;
 }
 
 body {
@@ -57,7 +60,6 @@ body {
   font-family: "Open Sans";
   background-color: var(--bg-1);
   color: var(--fg-1);
-  transition: all 0.5s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -69,7 +71,6 @@ a {
 
 a:hover {
   color: var(--link);
-  transition: 0.2s;
 }
 
 /* For code block */

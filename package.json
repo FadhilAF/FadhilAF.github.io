@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack && npm-run-all -p dev:*",
-    "build": "eleventy && tailwindcss -i src/assets/css/styles.css -o dist/assets/css/styles.css --postcss",
+    "build": "webpack && eleventy && tailwindcss -i src/assets/css/styles.css -o dist/assets/css/styles.css --postcss",
     "dev:11ty": "eleventy --serve",
     "dev:css": "tailwindcss -i src/assets/css/styles.css -o dist/assets/css/styles.css --watch --postcss",
     "bundle": "webpack"
