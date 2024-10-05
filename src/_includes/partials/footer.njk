@@ -1,0 +1,64 @@
+<div class="infos">
+  <div class="logo-wrapper">
+    <img src="/assets/svg/logo.svg" alt="website logo" />
+  </div>
+  <div>
+    <p class="mt-0 mb-1 text-xl font-bold">About this Website</p>
+    The first purpose of this website is for me to learn react and
+    express. And the second one, is to share information that I want to
+    share. (This information is made sometime in 2022 the one below is earlier)
+
+
+    <p class="my-1 text-sm font-bold">A little bit of additional yap</p>
+    After trying bunch of stuff, I came to conclusion that its better to be 
+    as closed as possible to the basics for the frontend. For the backend,
+    there is still a dillema between a simple go like language or a more
+    complex language like java since the programming language offer so much
+    features like reflection, annotations, that makes IoC and AOP possible.
+    I also just learned that in order to separate concerns for the services
+    you don't need to make it a microservice, you could just make it modular
+    and monolithic with very dynamic build system configuration even better
+    with IoC. By trying to think outside the box, I find out so many different
+    things like OSGi.
+  </div>
+  <div>
+    <p class="mt-0 mb-1 text-lg font-bold">Personal Info</p>
+    My full name is Muhammad Fadhil Al-Fatih. From Palembang, South Sumatra,
+    Indonesia. I've tried fair amount of frontend and backend frameworks.
+
+    For now, (currently year 2024) I'm a student at Sriwijaya
+    University studying Informatics. At the first time when I go to
+    University, I'd like to become a master at machine learning, but at 
+    a second thought learning Software Engineering is interesting too..    
+
+    <p class="mt-4 mb-1 font-bold">
+      You could also see my social media below:
+    </p>
+
+    {% include "components/socialMedia.njk" %}
+  </div>
+</div>
+
+<style>
+  .infos {
+    background-color: var(--bg-3);
+    display: grid;
+    min-width: 0;
+    grid-template-columns: 0.2fr 1fr 1fr;
+    gap: 5rem;
+    padding: 30px 80px 80px 80px;
+    text-align: left;
+    font-size: 0.875rem;
+    color: var(--fg-4);
+  }
+
+  @media screen and (max-width: 860px) {
+    .infos {
+      grid-template-columns: 1fr;
+      padding: 24px;
+    }
+    .logo-wrapper {
+      max-width: 4rem;
+    }
+  }
+</style>

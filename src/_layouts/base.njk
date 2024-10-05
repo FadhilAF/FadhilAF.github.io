@@ -22,6 +22,7 @@
   <body>
     {% include "partials/header.njk" %}
     {{ content | safe }}
+    {% include "partials/footer.njk" %}
     <script src="{{ '/assets/js/script.js' | url }}" defer></script>
   </body>
 </html>

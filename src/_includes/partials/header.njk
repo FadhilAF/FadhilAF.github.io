@@ -21,12 +21,28 @@
       {% include "components/toggleSwitch.njk" %}
     </div>
   </div>
+  <div id="navigation-dropdown" class="relative hidden">
+    <div class="w-full pb-4 space-y-4 block absolute" style="background-color: var(--bg-1);">
+      {%- for page in collections.page -%}
+        <div class="text-center">
+          <a href="{{ page.url }}">{{ page.data.title | capitalize }}</a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
 </div>
+
+<script>
+  document.querySelector(".BURGER-ICON").addEventListener("click", () => {
+    document.getElementById("navigation-dropdown").classList.toggle("hidden");
+  });
+</script>
 
 <style>
   .header {
     background-color: var(--bg-1);
     position: sticky; /* relative, tapi nempel */
+    width: 100%;
     top: 0; /* harus kasih tahu dimano lokasi dio pas sticky agek */
     left: 0;
     z-index: 1;

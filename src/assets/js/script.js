@@ -14,12 +14,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function updateToggle() {
-  const themeToggle = document.getElementById("theme-toggle");
-
   const currentTheme = localStorage.getItem("theme");
 
   document.body.setAttribute("data-theme", currentTheme);
-  themeToggle.checked = currentTheme === "light";
+  document.getElementById("theme-toggle").checked = currentTheme === "light";
 }
 
 function toggleTheme() {
