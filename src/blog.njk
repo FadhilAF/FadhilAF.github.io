@@ -1,0 +1,117 @@
+---
+title: blog
+layout: base 
+tags: page
+--- 
+
+<div class="text-center">
+  <p class="text-2xl font-bold m-8">Blog</p>
+  <div class="m-auto title-desc">
+    This is the place where I wanted to share something. Maybe like some
+    topics or my school assignment that I proud of.
+  </div>
+  <div class="blog-container grid relative mx-auto my-6 px-4 py-6 rounded-xl">
+    {%- for blog in collections.blog -%}
+    <a
+      href="{{ blog.url }}"
+      class="hover:scale-102 hover:cursor-pointer transition-transform duration-200 card grid"
+    >
+      <div class="card-image block bg-contain bg-center bg-no-repeat"         
+        style="background-image: url('{{ blog.data.cover }}'); background-color: var(--bg-3);"></div>
+      <div class="card-text block relative text-left px-2">
+        <p class="category relative text-sm font-bold">{{ blog.data.category}}</p>
+        <div class="title block text-xl font-bold">{{ blog.data.name }}</div>
+        <div class="description block text-xs">{{ blog.data.description }}</div>
+        <hr class="line  my-1" />
+        <div class="profile h-max relative flex items-center">
+          <div class="w-5 h-5 mr-2 rounded-2xl bg-contain bg-center bg-no-repeat"
+            style="background-image:  url('{{ blog.data.profile }}'); background-color: var(--bg-3);"></div>
+          <span class="profile-name text-sm mr-1">{{ blog.data.author }},</span>
+          <span class="post-date text-sm">{{ blog.data.date | formatDate }}</span>
+        </div>
+      </div>
+    </a>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  .title-desc {
+    width: 32rem;
+  }
+
+  .blog-container {
+    width: 42rem;
+    background-color: var(--bg-2);
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  @media screen and (max-width: 44rem) {
+    .blog-container {
+      width: calc(100% - 2rem);
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    /*change card style*/
+    .title-desc {
+      width: calc(100% - 2rem);
+    }
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    grid-template-columns: 7rem 1fr;
+  }
+
+  .card:hover {
+    color: var(--blue);
+  }
+
+  .card-image {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .category {
+    color: var(--category);
+  }
+
+  .description {
+    min-height: 2rem; /* biar jangan lebih pendek dari 2 rem, tapi dpp lebih*/
+  }
+
+  .line {
+    border-top: 1px solid var(--fg-1);
+    transition: all 0.2s;
+  }
+
+  .profile {
+    bottom: 0;
+  }
+
+  @media screen and (max-width: 540px) {
+    .card {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .card-image {
+      width: 10rem;
+      height: 10rem;
+      margin: auto;
+    }
+    .category {
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+    .title,
+    .description {
+      text-align: center;
+    }
+    .profile {
+      justify-content: center; /** kan container flex tuh cuma container, jadi yand ditengahi tuh isinyo, maka justify-content center  */
+    }
+  }
+</style>

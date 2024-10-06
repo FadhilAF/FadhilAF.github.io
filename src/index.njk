@@ -4,7 +4,7 @@ layout: base
 tags: page
 --- 
 
-<div class="h-screen w-full text-center relative">
+<section class="h-screen w-full text-center relative">
   <div class="h-36 w-11/12 m-auto inset-0 text-5xl md:text-6xl lg:text-8xl font-bold inline-block absolute">
     <div class="p-4" id="typewriter"></div>
     <div class="w-max m-auto">
@@ -14,7 +14,7 @@ tags: page
   <div class="h-4 w-full bottom-20 absolute">
     Hello, welcome to my personal website!
   </div>
-</div>
+</section>
 <div class="login">
   <div class="max-w-lg">
     <div class="text-center mr-8 ml-8">
@@ -26,8 +26,8 @@ tags: page
       (not everyone could create an account, its mostly my family through direct contact with me)
     </p>
   </div>
-    {% set greenButton = {link: '#', text: 'Log In', width: 'w-24'} %}
-    {% include "components/greenButton.njk" %}
+  {% set greenButton = {link: '#', text: 'Log In', width: 'w-24'} %}
+  {% include "components/greenButton.njk" %}
 </div>
 
 <script src="/assets/js/typewriter.bundle.js"></script>

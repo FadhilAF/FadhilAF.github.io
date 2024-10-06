@@ -9,7 +9,7 @@ if (theme === null && window.matchMedia("(prefers-color-scheme: dark)").matches)
     localStorage.setItem("theme", "dark");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", (event) => {
   updateToggle();
 });
 
