@@ -14,7 +14,7 @@ tags: page
     {%- for blog in collections.blog -%}
     <a
       href="{{ blog.url }}"
-      class="hover:scale-102 hover:cursor-pointer transition-transform duration-200 card grid"
+      class="hover:scale-102 hover:cursor-pointer transition-transform duration-200 ease-in-out card grid"
     >
       <div class="card-image block bg-contain bg-center bg-no-repeat"         
         style="background-image: url('{{ blog.data.cover }}'); background-color: var(--bg-3);"></div>
