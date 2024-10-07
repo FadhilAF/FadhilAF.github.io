@@ -3,7 +3,7 @@ module.exports = function (eleventyConfig) {
   // For all static files
   eleventyConfig.addPassthroughCopy("src/assets/js/script.js");
   eleventyConfig.addPassthroughCopy("src/assets/svg");
-  eleventyConfig.addPassthroughCopy("src/blog/assets/img");
+  eleventyConfig.addPassthroughCopy("src/blog/img");
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "/"});
   //For tailwind's CSS file we don't need to copy it because tailwind handle it
   //Also for soon to be bundled JS file we don't need to copy it because it will be bundled

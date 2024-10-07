@@ -1,8 +1,9 @@
 # fadhil.github.io
 
-Created to replace the stinky react.. to eleventy..
+Created to replace the old react.. to eleventy..
 
-we've made the stack for ourselves by manually combining the following:
-Eleventy, TailwindCSS, Webpack
+Why not just Astro? cuz I dont know it before I start this project.
+And I also like the way eleventy works. 
+It's very close to the basic you can feel how it work behind the scene.
 
-we might need AlpineJS so we can avoid the complexity of JS we need to write
+old site: [old.fadhilaf.github.io](https://github.com/fadhilaf/old.fadhilaf.github.io)

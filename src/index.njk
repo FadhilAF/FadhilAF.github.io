@@ -15,41 +15,35 @@ tags: page
     Hello, welcome to my personal website!
   </div>
 </section>
-<div class="login">
+<div class="stats">
+  {#
   <div class="max-w-lg">
-    <div class="text-center mr-8 ml-8">
-      <p class="font-bold text-lg">
-        Here's the login button to authenticate
+      <div class="text-center mr-8 ml-8">
+        <p class="font-bold text-lg">
+          Here's the login button to authenticate
+        </p>
+      </div>
+      <p class="font-light m-8">
+        (not everyone could create an account, its made directly from contact with me)
       </p>
     </div>
-    <p class="font-light m-8">
-      (not everyone could create an account, its made directly from contact with me)
-    </p>
-  </div>
-  {% set greenButton = {link: '#', text: 'Log In', width: 'w-24'} %}
-  {% include "components/greenButton.njk" %}
+    {% set greenButton = {link: '#', text: 'Log In', width: 'w-24'} %}
+    {% include "components/greenButton.njk" %}
+  #}
+  <p class="text-lg font-bold">Stats:</p>
+  {% include "stats.njk" %}
 </div>
-<p class="text-lg font-bold">Hall of fame:</p>
-Aku keren!
-
-Aku keren!
-
-No, me
 
 <script src="/assets/js/typewriter.bundle.js"></script>
 
 <style>
-  .login {
+  .stats {
     background-color: var(--bg-2);
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-
-  .login svg {
-    fill: var(--bg-1);
   }
 
   @media screen and (max-width: 75rem) {

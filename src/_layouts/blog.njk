@@ -21,8 +21,19 @@
   </head>
   <body>
     {% include "partials/header.njk" %}
-    <article class="prose">
+    <article class="prose container md:max-w-screen-md p-4 mx-auto text-left">
+      <h2>{{ name }}</h2>
+      <div class="text-sm">
+        <div class="relative inline-block top-0.5 mr-1 h-4 w-4 bg-contain bg-center bg-no-repeat rounded-2xl" style="background-image:  url('.{{ profile }}');"></div>
+        {{ author }}, last edited {{ date | formatDate }}
+      </div>
+      <div class="my-4 h-[150px] bg-contain bg-center bg-no-repeat" style="background-image:  url('.{{ cover }}');"></div>
       {{ content | safe }}
+      <style>
+        img {
+          margin: auto;
+        } 
+      </style>
     </article>
     {% include "partials/footer.njk" %}
     <script src="{{ '/assets/js/script.js' | url }}" defer></script>
